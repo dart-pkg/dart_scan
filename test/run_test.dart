@@ -11,11 +11,7 @@ void main() {
       echo(home, 'home');
       String helloAppDir = path.join(home, 'dart', 'hello', 'app');
       echo(helloAppDir, 'helloDir');
-      Set<String> set1 = packagesInSourceDirectory(helloAppDir);
-      echo(set1, 'set1');
-      echo(set1.toList(), 'set1.toList()');
-      List<String> list = set1.toList();
-      list.sort((a, b) => a.compareTo(b));
+      List<String> list = packagesInSourceDirectory(helloAppDir);
       echo(list, 'list');
     });
     test('run2', () {

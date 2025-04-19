@@ -1,6 +1,6 @@
 import 'package:sys/sys.dart' as sys;
 
-Set<String> packagesInSourceDirectory(String helloAppDir) {
+List<String> packagesInSourceDirectory(String helloAppDir) {
   List<String> files = sys.pathFiles(helloAppDir);
   List<String> sources =
   files.where((x) => sys.pathExtension(x) == '.dart').toList();
@@ -16,5 +16,7 @@ Set<String> packagesInSourceDirectory(String helloAppDir) {
       }
     }
   }
-  return set;
+  final List<String> list = set.toList();
+  list.sort((a, b) => a.compareTo(b));
+  return list;
 }
