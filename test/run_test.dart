@@ -9,9 +9,11 @@ void main() {
     test('run1', () {
       String home = sys.getenv('HOME')!;
       echo(home, 'home');
-      String helloAppDir = path.join(home, 'dart', 'hello', 'app');
-      echo(helloAppDir, 'helloDir');
-      List<String> list = packagesInSourceDirectory(helloAppDir);
+      String libDir = path.join(home, 'pub', 'dart_scan', 'lib');
+      String testDir = path.join(home, 'pub', 'dart_scan', 'test');
+      echo(libDir, 'libDir');
+      echo(testDir, 'testDir');
+      List<String> list = packagesInSourceDirectory(libDir, testDir);
       echo(list, 'list');
     });
     test('run2', () {
