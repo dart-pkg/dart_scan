@@ -2,8 +2,7 @@
 set -uvx
 set -e
 pubspec-gen
-#dart pub add dev:output dev:path
-dart pub get
+#dart pub get
 ./do-analyze.sh
 ./do-test.sh
 dart pub publish
