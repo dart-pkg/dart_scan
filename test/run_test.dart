@@ -16,8 +16,9 @@ void main() {
       //echo(files, 'files');
       List<String> sources =
           files.where((x) => sys.pathExtension(x) == '.dart').toList();
-      echo(sources, '$sources');
+      //echo(sources, '$sources');
       final reg = RegExp(r'package:([^/]+)/');
+      final Set<String> set = <String>{};
       for (int i=0; i<sources.length; i++) {
         List<String> lines = sys.readFileLines(sources[i]);
         //echo(lines, sources[i]);
@@ -25,11 +26,12 @@ void main() {
           String line = lines[j];
           RegExpMatch? match = reg.firstMatch(line);
           if (match != null) {
-            echo(match.group(1));
+            //echo(match.group(1));
+            set.add(match.group(1)!);
           }
-
         }
       }
+      echo(set, 'set');
     });
     test('run2', () {
       dump('this is run2');
