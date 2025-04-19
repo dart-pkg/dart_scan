@@ -13,27 +13,10 @@ void main() {
       echo(helloAppDir, 'helloDir');
       Set<String> set1 = packagesInSourceDirectory(helloAppDir);
       echo(set1, 'set1');
-      echo(sys.directoryExists(helloAppDir), 'sys.directoryExists(helloDir)');
-      List<String> files = sys.pathFiles(helloAppDir);
-      //echo(files, 'files');
-      List<String> sources =
-          files.where((x) => sys.pathExtension(x) == '.dart').toList();
-      //echo(sources, '$sources');
-      final reg = RegExp(r'package:([^/]+)/');
-      final Set<String> set = <String>{};
-      for (int i=0; i<sources.length; i++) {
-        List<String> lines = sys.readFileLines(sources[i]);
-        //echo(lines, sources[i]);
-        for (int j=0; j<lines.length; j++) {
-          String line = lines[j];
-          RegExpMatch? match = reg.firstMatch(line);
-          if (match != null) {
-            //echo(match.group(1));
-            set.add(match.group(1)!);
-          }
-        }
-      }
-      echo(set, 'set');
+      echo(set1.toList(), 'set1.toList()');
+      List<String> list = set1.toList();
+      list.sort((a, b) => a.compareTo(b));
+      echo(list, 'list');
     });
     test('run2', () {
       dump('this is run2');
