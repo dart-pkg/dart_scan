@@ -4,7 +4,7 @@ List<String> packagesInSourceDirectory(String helloAppDir) {
   List<String> files = sys.pathFiles(helloAppDir);
   List<String> sources =
   files.where((x) => sys.pathExtension(x) == '.dart').toList();
-  final reg = RegExp(r'package:([^/]+)/');
+  final reg = RegExp(r'^import[ ]+[^ ]package:([^/]+)/');
   final Set<String> set = <String>{};
   for (int i=0; i<sources.length; i++) {
     List<String> lines = sys.readFileLines(sources[i]);

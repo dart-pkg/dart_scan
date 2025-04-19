@@ -1,6 +1,6 @@
 name: dart_scan
 description: "dart_scan package project"
-version: 0.0.1
+version: 0.0.2
 homepage:
 repository: https://github.com/dart-pkg/dart_scan
 
@@ -8,7 +8,7 @@ environment:
   sdk: ^3.7.2
 
 dependencies:
-  output: ^1.0.0
+  output: ^1.0.1
   path: ^1.9.1
   sys: ^0.0.5
 
