@@ -2,7 +2,7 @@ import 'package:test/test.dart';
 import 'package:sys/sys.dart' as sys;
 import 'package:output/output.dart';
 import 'package:path/path.dart' as path;
-//import 'package:dart_scan/dart_scan.dart';
+import 'package:dart_scan/dart_scan.dart';
 
 void main() {
   group('Run', () {
@@ -11,6 +11,8 @@ void main() {
       echo(home, 'home');
       String helloAppDir = path.join(home, 'dart', 'hello', 'app');
       echo(helloAppDir, 'helloDir');
+      Set<String> set1 = packagesInSourceDirectory(helloAppDir);
+      echo(set1, 'set1');
       echo(sys.directoryExists(helloAppDir), 'sys.directoryExists(helloDir)');
       List<String> files = sys.pathFiles(helloAppDir);
       //echo(files, 'files');
