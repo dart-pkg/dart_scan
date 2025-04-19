@@ -17,6 +17,7 @@ void main() {
       List<String> sources =
           files.where((x) => sys.pathExtension(x) == '.dart').toList();
       echo(sources, '$sources');
+      echo(sys.pathFiles('xyz'));
     });
     test('run2', () {
       dump('this is run2');

@@ -10,7 +10,7 @@ environment:
 dependencies:
   output: ^1.0.0
   path: ^1.9.1
-  sys: ^0.0.4
+  sys: ^0.0.5
 
 dev_dependencies:
   lints: ^5.1.1
