@@ -17,6 +17,8 @@ cat << EOS >> CHANGELOG.md
 - pubspec.yaml was generated using pubspec-gen
 EOS
 
+dos2unix pubspec.yaml
+dos2unix CHANGELOG.md
 
 ./do-analyze.sh
 ./do-test.sh
