@@ -6,6 +6,6 @@
 
 - Modified dart_scan.dart so that scan exclude comments
 
-## 2025.420.803
+## 2025.420.839
 
-- pubspec.yaml was generated using pubspec-gen
+- Modified varible names
