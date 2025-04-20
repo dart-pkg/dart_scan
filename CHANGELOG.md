@@ -13,3 +13,7 @@
 ## 2025.420.1127
 
 - Modified variable names and release.sh
+
+## 2025.420.1449
+
+- Updated deppendency to sys package: sys 2025.420.1441 (was 2025.420.435)
