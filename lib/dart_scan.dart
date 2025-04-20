@@ -1,7 +1,7 @@
 import 'package:sys/sys.dart' as sys;
 
 List<String> _findPackagesInDirectory(String $dir) {
-  List<String> files = sys.pathFiles($dir);
+  List<String> files = sys.pathFiles($dir, true);
   List<String> $sources =
       files.where(($x) => sys.pathExtension($x) == '.dart').toList();
   final $reg = RegExp(r'^import[ ]+[^ ]package:([^/]+)/');

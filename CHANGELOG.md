@@ -21,3 +21,7 @@
 ## 2025.421.307
 
 - Update dependent version of sys package
+
+## 2025.421.321
+
+- Modified dart_scan.dart to search .dart files recursively
