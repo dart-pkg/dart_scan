@@ -25,9 +25,9 @@ List<String> packagesInSourceDirectory(String $libDir, [String? $testDir]) {
   List<String> $libPackages = _findPackagesInDirectory($libDir);
   List<String> $testPackages =
       $testDir == null ? <String>[] : _findPackagesInDirectory($testDir);
-  for (int i = 0; i < $testPackages.length; i++) {
-    if (!$libPackages.contains($testPackages[i])) {
-      $libPackages.add('dev:${$testPackages[i]}');
+  for (int $i = 0; $i < $testPackages.length; $i++) {
+    if (!$libPackages.contains($testPackages[$i])) {
+      $libPackages.add('dev:${$testPackages[$i]}');
     }
   }
   return $libPackages;

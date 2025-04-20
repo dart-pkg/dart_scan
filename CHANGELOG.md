@@ -9,3 +9,7 @@
 ## 2025.420.839
 
 - Modified varible names
+
+## 2025.420.1127
+
+- Modified variable names and release.sh
