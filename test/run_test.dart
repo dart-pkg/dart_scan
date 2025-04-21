@@ -13,7 +13,7 @@ void main() {
       String testDir = path.join(home, 'pub', 'dart_scan', 'test');
       echo(libDir, 'libDir');
       echo(testDir, 'testDir');
-      List<String> list = packagesInSourceDirectory(libDir, testDir);
+      List<String> list = packagesInSourceDirectory([libDir], testDir);
       echo(list, 'list');
     });
     test('run2', () {

@@ -25,3 +25,7 @@
 ## 2025.421.321
 
 - Modified dart_scan.dart to search .dart files recursively
+
+## 2025.421.2226
+
+- Changed packagesInSourceDirectory() to accept multiple lib dirs
