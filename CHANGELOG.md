@@ -29,3 +29,7 @@
 ## 2025.421.2226
 
 - Changed packagesInSourceDirectory() to accept multiple lib dirs
+
+## 2025.424.257
+
+- Updated package dependencies: sys 2025.424.246 (was 2025.421.2149)
