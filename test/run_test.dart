@@ -11,9 +11,13 @@ void main() {
       echo(home, 'home');
       String libDir = path.join(home, 'pub', 'dart_scan', 'lib');
       String testDir = path.join(home, 'pub', 'dart_scan', 'test');
+      String currDir = path.join(home, 'pub', 'dart_scan');
       echo(libDir, 'libDir');
       echo(testDir, 'testDir');
-      List<String> list = packagesInSourceDirectory([libDir], testDir);
+      List<String> list = packagesInSourceDirectory([
+        '*$currDir',
+        libDir,
+      ], testDir);
       echo(list, 'list');
     });
     test('run2', () {

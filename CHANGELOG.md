@@ -33,3 +33,7 @@
 ## 2025.424.257
 
 - Updated package dependencies: sys 2025.424.246 (was 2025.421.2149)
+
+## 2025.424.1203
+
+- packagesInSourceDirectory() can be used to search non-recursively

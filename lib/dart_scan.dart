@@ -4,7 +4,12 @@ List<String> _findPackagesInDirectory(List<String> $dirList) {
   final Set<String> $set = <String>{};
   for (int $idx = 0; $idx < $dirList.length; $idx++) {
     String $dir = $dirList[$idx];
-    List<String> files = sys.pathFiles($dir, true);
+    bool $recursive = !$dir.startsWith('*');
+    if ($dir.startsWith('*')) {
+      $dir = $dir.substring(1);
+    }
+    //print('${$dir}: ${$recursive}');
+    List<String> files = sys.pathFiles($dir, $recursive);
     List<String> $sources =
         files.where(($x) => sys.pathExtension($x) == '.dart').toList();
     final $reg = RegExp(r'^import[ ]+[^ ]package:([^/]+)/');
@@ -25,10 +30,10 @@ List<String> _findPackagesInDirectory(List<String> $dirList) {
 }
 
 List<String> packagesInSourceDirectory(
-  List<String> $libDirList, [
+  List<String> $srcDirList, [
   String? $testDir,
 ]) {
-  List<String> $libPackages = _findPackagesInDirectory($libDirList);
+  List<String> $libPackages = _findPackagesInDirectory($srcDirList);
   List<String> $testPackages =
       $testDir == null
           ? <String>[]
