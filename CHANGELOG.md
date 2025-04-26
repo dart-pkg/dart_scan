@@ -37,3 +37,7 @@
 ## 2025.424.1203
 
 - packagesInSourceDirectory() can be used to search non-recursively
+
+## 2025.426.1603
+
+- Updated dependncies (sys: ^2025.424.246 ==> sys: ^2025.426.1452)
