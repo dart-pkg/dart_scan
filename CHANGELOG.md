@@ -85,3 +85,14 @@
 +version: 2025.427.2004
 +  pubspec_parse: ^1.5.0
 ```
+
+## 2025.428.15
+
+- Added: `List<String> findGitDependenciesInPubspecYaml(String pubspecYamlPath)` and `List<String> findPathDependenciesInPubspecYaml(String pubspecYamlPath)`
+
+```
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+-version: 2025.427.2004
++version: 2025.428.15
+```

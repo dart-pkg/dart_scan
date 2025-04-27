@@ -78,3 +78,45 @@ List<String> findHostedDependenciesInPubspecYaml(String pubspecYamlPath) {
     ..addAll(devNames);
   return result;
 }
+
+List<String> _extractGitDependencies(Map<String, Dependency> deps) {
+  List<String> result = <String>[];
+  List<String> keys = deps.keys.toList();
+  for (int i = 0; i < keys.length; i++) {
+    String key = keys[i];
+    if (deps[key] is GitDependency) {
+      result.add(key);
+    }
+  }
+  result.sort((x, y) => x.compareTo(y));
+  return result;
+}
+
+List<String> findGitDependenciesInPubspecYaml(String pubspecYamlPath) {
+  String text = sys__.readFileString(pubspecYamlPath);
+  final pubspec = Pubspec.parse(text);
+  Map<String, Dependency> deps = pubspec.dependencies;
+  List<String> names = _extractGitDependencies(deps);
+  return names;
+}
+
+List<String> _extractPathDependencies(Map<String, Dependency> deps) {
+  List<String> result = <String>[];
+  List<String> keys = deps.keys.toList();
+  for (int i = 0; i < keys.length; i++) {
+    String key = keys[i];
+    if (deps[key] is PathDependency) {
+      result.add(key);
+    }
+  }
+  result.sort((x, y) => x.compareTo(y));
+  return result;
+}
+
+List<String> findPathDependenciesInPubspecYaml(String pubspecYamlPath) {
+  String text = sys__.readFileString(pubspecYamlPath);
+  final pubspec = Pubspec.parse(text);
+  Map<String, Dependency> deps = pubspec.dependencies;
+  List<String> names = _extractPathDependencies(deps);
+  return names;
+}
