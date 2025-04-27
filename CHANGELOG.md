@@ -73,3 +73,15 @@
 -  sys: ^2025.426.2256
 +  sys: ^2025.427.1718
 ```
+
+## 2025.427.2004
+
+- Added: List<String> findHostedDependenciesInPubspecYaml(String pubspecYamlPath)
+
+```
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+-version: 2025.427.1743
++version: 2025.427.2004
++  pubspec_parse: ^1.5.0
+```

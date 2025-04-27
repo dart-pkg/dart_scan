@@ -21,7 +21,14 @@ void main() {
       echo(list, 'list');
     });
     test('run2', () {
-      dump('this is run2');
+      List<String> pkgNames = findHostedDependenciesInPubspecYaml(
+        'pubspec.yaml',
+      );
+      echo(pkgNames);
+      expect(pkgNames.contains('pubspec_parse'), isTrue);
+      expect(pkgNames.contains('sys'), isTrue);
+      expect(pkgNames.contains('dev:lints'), isTrue);
+      expect(pkgNames.contains('dev:test'), isTrue);
     });
   });
 }
