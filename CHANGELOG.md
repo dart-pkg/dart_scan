@@ -124,3 +124,16 @@
 -  sys: ^2025.428.1721
 +  sys: ^2025.430.1853
 ```
+
+## 2025.430.2049
+
+- Update package dependencies
+
+```
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+-version: 2025.430.1937
++version: 2025.430.2049
+-  sys: ^2025.430.1853
++  sys: ^2025.430.2029
+```
