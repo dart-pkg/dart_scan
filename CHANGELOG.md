@@ -111,3 +111,16 @@
 -  output: ^2025.426.2027
 +  output: ^2025.428.931
 ```
+
+## 2025.430.1937
+
+- Update package dependencies
+
+```
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+-version: 2025.428.1730
++version: 2025.430.1937
+-  sys: ^2025.428.1721
++  sys: ^2025.430.1853
+```
