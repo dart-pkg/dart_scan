@@ -1,5 +1,8 @@
 import 'package:sys/sys.dart' as sys_sys;
 import 'package:pubspec_parse/pubspec_parse.dart' as pubspec_parse;
+/*
+export 'package:exporting/exporting.dart' show xyz;
+ */
 
 List<String> _findPackagesInDirectory(List<String> $dirList) {
   final Set<String> $set = <String>{};
@@ -13,14 +16,14 @@ List<String> _findPackagesInDirectory(List<String> $dirList) {
     List<String> files = sys_sys.pathFiles($dir, $recursive);
     List<String> $sources =
         files.where(($x) => sys_sys.pathExtension($x) == '.dart').toList();
-    final $reg = RegExp(r'^import +[^ ]package:([^/]+)/');
+    final $reg = RegExp(r'^(import|export) +[^ ]package:([^/]+)/');
     for (int $i = 0; $i < $sources.length; $i++) {
       List<String> $lines = sys_sys.readFileLines($sources[$i]);
       for (int $j = 0; $j < $lines.length; $j++) {
         String $line = $lines[$j];
         RegExpMatch? $match = $reg.firstMatch($line);
         if ($match != null) {
-          $set.add($match.group(1)!);
+          $set.add($match.group(2)!);
         }
       }
     }
