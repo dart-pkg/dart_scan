@@ -24,7 +24,7 @@ void main() {
         libDir,
       ], testDir);
       echo(list, title: 'list');
-      expect(list.contains('exporting'), isTrue);
+      //expect(list.contains('exporting'), isTrue);
     });
     test('run2', () {
       List<String> pkgNames = findHostedDependenciesInPubspecYaml(

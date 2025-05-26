@@ -180,3 +180,23 @@
 +  debug_output: ^2025.502.2007
 -  output: ^2025.502.1958
 ```
+
+## 2025.526.1920
+
+- Update dependencies
+
+```
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+-version: 2025.504.1204
++version: 2025.526.1920
+-  sys: ^2025.504.1149
++  sys: ^2025.526.1802
+-  debug_output: ^2025.502.2007
+-  lints: ^5.1.1
+-  path: ^1.9.1
+-  test: ^1.25.15
++  debug_output: ^2025.504.1731
++  lints: ^6.0.0
++  test: ^1.26.2
+```

@@ -1,8 +1,5 @@
 import 'package:sys/sys.dart' as sys_sys;
 import 'package:pubspec_parse/pubspec_parse.dart' as pubspec_parse;
-/*
-export 'package:exporting/exporting.dart' show xyz;
- */
 
 List<String> _findPackagesInDirectory(List<String> $dirList) {
   final Set<String> $set = <String>{};
