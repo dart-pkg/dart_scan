@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:sys/sys.dart' as sys;
+import 'package:std/std.dart' as std_std;
 import 'package:debug_output/debug_output.dart';
 import 'package:dart_scan/dart_scan.dart';
 
@@ -8,13 +8,13 @@ void main() {
     test('run1', () {
       //String home = sys.getenv('HOME')!;
       //echo(home, title: 'home');
-      String libDir = sys.pathExpand(
+      String libDir = std_std.pathExpand(
         '~/pub/dart_scan/lib',
       ); // path.join(home, 'pub', 'dart_scan', 'lib');
-      String testDir = sys.pathExpand(
+      String testDir = std_std.pathExpand(
         '~/pub/dart_scan/test',
       ); // path.join(home, 'pub', 'dart_scan', 'test');
-      String currDir = sys.pathExpand(
+      String currDir = std_std.pathExpand(
         '~/pub/dart_scan',
       ); // path.join(home, 'pub', 'dart_scan');
       echo(libDir, title: 'libDir');
@@ -32,7 +32,7 @@ void main() {
       );
       echo(pkgNames);
       expect(pkgNames.contains('pubspec_parse'), isTrue);
-      expect(pkgNames.contains('sys'), isTrue);
+      expect(pkgNames.contains('std'), isTrue);
       expect(pkgNames.contains('dev:lints'), isTrue);
       expect(pkgNames.contains('dev:test'), isTrue);
     });

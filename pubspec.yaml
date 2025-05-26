@@ -1,13 +1,13 @@
 name: dart_scan
 description: dart_scan project
-version: 2025.526.1920
+version: 2025.526.2339
 homepage: 
 repository: https://github.com/dart-pkg/dart_scan
 environment:
   sdk: ^3.7.2
 dependencies:
   pubspec_parse: ^1.5.0
-  sys: ^2025.526.1802
+  std: ^2025.526.2333
 dev_dependencies:
   debug_output: ^2025.504.1731
   lints: ^6.0.0

@@ -1,4 +1,4 @@
-import 'package:sys/sys.dart' as sys_sys;
+import 'package:std/std.dart' as std_std;
 import 'package:pubspec_parse/pubspec_parse.dart' as pubspec_parse;
 
 List<String> _findPackagesInDirectory(List<String> $dirList) {
@@ -10,12 +10,12 @@ List<String> _findPackagesInDirectory(List<String> $dirList) {
       $dir = $dir.substring(1);
     }
     //print('${$dir}: ${$recursive}');
-    List<String> files = sys_sys.pathFiles($dir, $recursive);
+    List<String> files = std_std.pathFiles($dir, $recursive);
     List<String> $sources =
-        files.where(($x) => sys_sys.pathExtension($x) == '.dart').toList();
+        files.where(($x) => std_std.pathExtension($x) == '.dart').toList();
     final $reg = RegExp(r'^(import|export) +[^ ]package:([^/]+)/');
     for (int $i = 0; $i < $sources.length; $i++) {
-      List<String> $lines = sys_sys.readFileLines($sources[$i]);
+      List<String> $lines = std_std.readFileLines($sources[$i]);
       for (int $j = 0; $j < $lines.length; $j++) {
         String $line = $lines[$j];
         RegExpMatch? $match = $reg.firstMatch($line);
@@ -66,7 +66,7 @@ List<String> _extractHostedDependencies(
 }
 
 List<String> findHostedDependenciesInPubspecYaml(String pubspecYamlPath) {
-  String text = sys_sys.readFileString(pubspecYamlPath);
+  String text = std_std.readFileString(pubspecYamlPath);
   final pubspec = pubspec_parse.Pubspec.parse(text);
   Map<String, pubspec_parse.Dependency> deps = pubspec.dependencies;
   List<String> names = _extractHostedDependencies(deps);
@@ -95,7 +95,7 @@ List<String> _extractGitDependencies(
 }
 
 List<String> findGitDependenciesInPubspecYaml(String pubspecYamlPath) {
-  String text = sys_sys.readFileString(pubspecYamlPath);
+  String text = std_std.readFileString(pubspecYamlPath);
   final pubspec = pubspec_parse.Pubspec.parse(text);
   Map<String, pubspec_parse.Dependency> deps = pubspec.dependencies;
   List<String> names = _extractGitDependencies(deps);
@@ -118,7 +118,7 @@ List<String> _extractPathDependencies(
 }
 
 List<String> findPathDependenciesInPubspecYaml(String pubspecYamlPath) {
-  String text = sys_sys.readFileString(pubspecYamlPath);
+  String text = std_std.readFileString(pubspecYamlPath);
   final pubspec = pubspec_parse.Pubspec.parse(text);
   Map<String, pubspec_parse.Dependency> deps = pubspec.dependencies;
   List<String> names = _extractPathDependencies(deps);

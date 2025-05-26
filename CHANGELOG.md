@@ -200,3 +200,16 @@
 +  lints: ^6.0.0
 +  test: ^1.26.2
 ```
+
+## 2025.526.2339
+
+- Update dependencies
+
+```
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+-version: 2025.526.1920
++version: 2025.526.2339
+-  sys: ^2025.526.1802
++  std: ^2025.526.2333
+```
